@@ -1,7 +1,12 @@
-﻿// Дополнительные сведения о F# см. на http://fsharp.org
-// Дополнительную справку см. в проекте "Учебник по F#".
+﻿let rec factorial n =
+    match n with
+    | 0 -> 1
+    | _ -> n * factorial (n - 1)
 
-[<EntryPoint>]
-let main argv = 
-    printfn "%A" argv
-    0 // возвращение целочисленного кода выхода
+let rec printFact n  =
+    match n with 
+    | 0 -> printfn "0! = 1"
+    | _ -> printfn "%d! = %d"  n (factorial (n))
+           
+printFact(5)
+
